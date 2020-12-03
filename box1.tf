@@ -1,14 +1,14 @@
 provider "aws" {
   profile = "default"
   region  = "eu-west-1"
-} 
+}
 terraform {
   backend "s3" {
     bucket = "toolbox-simplebucket"
-    key = "toolnodbox.tfstate"
-    region ="eu-west-1"
+    key    = "toolnodbox.tfstate"
+    region = "eu-west-1"
   }
-} 
+}
 resource "aws_instance" "first_task" {
   ami                    = "ami-0aef57767f5404a3c"
   instance_type          = "t2.micro"
@@ -18,7 +18,7 @@ resource "aws_instance" "first_task" {
   tags = {
     Name        = "tool_box"
     provisioner = "terraform"
-    Test       = "yes_no"
+    Test        = "yes_no"
   }
 }
 resource "aws_instance" "second_node" {
@@ -29,6 +29,6 @@ resource "aws_instance" "second_node" {
   tags = {
     Name        = "tool_box1"
     provisioner = "terraform"
-    Test       = "yes_no"
+    Test        = "yes_no"
   }
 }
