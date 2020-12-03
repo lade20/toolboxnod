@@ -18,6 +18,7 @@ resource "aws_instance" "first_task" {
   tags = {
     Name        = "tool_box"
     provisioner = "terraform"
+    Test       = "yes_no"
   }
 }
 resource "aws_instance" "second_node" {
@@ -28,5 +29,6 @@ resource "aws_instance" "second_node" {
   tags = {
     Name        = "tool_box1"
     provisioner = "terraform"
+    Test       = "yes_no"
   }
 }
